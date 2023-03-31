@@ -61,7 +61,7 @@ app.get('/ajaxmessage.html', function (req, res) {
 
 app.post("/ajaxmessage", function(req, res) {
     console.log(req.body);
-    var username = req.body.email;
+    var username = req.body.username;
     var country = req.body.country;
     var message = req.body.message;
 
