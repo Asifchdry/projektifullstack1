@@ -54,6 +54,21 @@ app.post('/newmessage', function (req, res) {
     res.send("Saved the data to a file. Browse to the /guestbook.html or go back and from navigation link go to guestbook to see the contents of file");
 });
 
+app.get('/ajaxmessage.html', function (req, res) {
+    res.sendFile(__dirname + '/ajaxmessage.html');
+});
+
+
+app.post("/ajaxmessage", function(req, res) {
+    console.log(req.body);
+    var username = req.body.email;
+    var country = req.body.country;
+    var message = req.body.message;
+
+  
+    res.send("Lähetit lomakkeen! Username: " + username + " Country: " + country + " Message: " + message);
+  });
+
 
 app.get('*', function (req, res) {
     res.send('Cant find the requested page', 404);
